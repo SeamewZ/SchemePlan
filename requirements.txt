@@ -1,0 +1,5 @@
+# Core reproduction uses only the Python standard library.
+# No packages are required for:
+#   python3 tests/smoke_test.py
+#   python3 scripts/recompute_metrics.py
+

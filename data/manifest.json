@@ -1,0 +1,71 @@
+{
+  "datasets": {
+    "Legacy_non-SWDE-434": {
+      "examples": 434,
+      "path": "data/processed/Legacy_non-SWDE-434.jsonl.gz",
+      "schema_types": [
+        "Book",
+        "CollegeOrUniversity",
+        "Course",
+        "Event",
+        "JobPosting",
+        "Movie",
+        "Organization",
+        "Product",
+        "Recipe",
+        "Restaurant",
+        "SoftwareApplication"
+      ]
+    },
+    "SWDE-1600": {
+      "examples": 1600,
+      "path": "data/processed/SWDE-1600.jsonl.gz",
+      "schema_types": [
+        "Book",
+        "CollegeOrUniversity",
+        "JobPosting",
+        "Movie",
+        "Person",
+        "Product",
+        "Restaurant",
+        "Vehicle"
+      ]
+    },
+    "WDC-PAVE-1418": {
+      "examples": 1418,
+      "path": "data/processed/WDC-PAVE-1418.jsonl.gz",
+      "schema_types": [
+        "Product"
+      ]
+    }
+  },
+  "predictions": {
+    "Legacy_non-SWDE-434/baseline_regex.json.gz": "results/predictions/Legacy_non-SWDE-434/baseline_regex.json.gz",
+    "Legacy_non-SWDE-434/direct_deepseek.json.gz": "results/predictions/Legacy_non-SWDE-434/direct_deepseek.json.gz",
+    "Legacy_non-SWDE-434/direct_deepseek_verifier.json.gz": "results/predictions/Legacy_non-SWDE-434/direct_deepseek_verifier.json.gz",
+    "Legacy_non-SWDE-434/schemaplan_rag.json.gz": "results/predictions/Legacy_non-SWDE-434/schemaplan_rag.json.gz",
+    "SWDE-1600/baseline_regex.json.gz": "results/predictions/SWDE-1600/baseline_regex.json.gz",
+    "SWDE-1600/direct_deepseek.json.gz": "results/predictions/SWDE-1600/direct_deepseek.json.gz",
+    "SWDE-1600/direct_deepseek_verifier.json.gz": "results/predictions/SWDE-1600/direct_deepseek_verifier.json.gz",
+    "SWDE-1600/schemaplan_rag.json.gz": "results/predictions/SWDE-1600/schemaplan_rag.json.gz",
+    "WDC-PAVE-1418/baseline_regex.json.gz": "results/predictions/WDC-PAVE-1418/baseline_regex.json.gz",
+    "WDC-PAVE-1418/direct_deepseek.json.gz": "results/predictions/WDC-PAVE-1418/direct_deepseek.json.gz",
+    "WDC-PAVE-1418/direct_deepseek_verifier.json.gz": "results/predictions/WDC-PAVE-1418/direct_deepseek_verifier.json.gz",
+    "WDC-PAVE-1418/schemaplan_rag.json.gz": "results/predictions/WDC-PAVE-1418/schemaplan_rag.json.gz",
+    "ablations/no_planner.json.gz": "results/predictions/ablations/no_planner.json.gz",
+    "ablations/no_property_wise_retrieval.json.gz": "results/predictions/ablations/no_property_wise_retrieval.json.gz",
+    "ablations/no_repair.json.gz": "results/predictions/ablations/no_repair.json.gz",
+    "diagnostics/no_fallback.json.gz": "results/predictions/diagnostics/no_fallback.json.gz",
+    "diagnostics/no_target_slot_admission.json.gz": "results/predictions/diagnostics/no_target_slot_admission.json.gz",
+    "diagnostics/no_template_swde.json.gz": "results/predictions/diagnostics/no_template_swde.json.gz"
+  },
+  "results": {
+    "ablation_metrics.csv": "results/reference/ablation_metrics.csv",
+    "direct_deepseek_by_split.csv": "results/reference/direct_deepseek_by_split.csv",
+    "main_results_by_split.csv": "results/reference/main_results_by_split.csv",
+    "main_results_pooled.csv": "results/reference/main_results_pooled.csv",
+    "no_template_swde_metrics.csv": "results/reference/no_template_swde_metrics.csv",
+    "recent_baselines_by_split.csv": "results/reference/recent_baselines_by_split.csv",
+    "recent_baselines_pooled.csv": "results/reference/recent_baselines_pooled.csv"
+  }
+}

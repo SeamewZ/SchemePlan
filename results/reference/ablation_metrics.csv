@@ -1,0 +1,7 @@
+method,examples,precision,recall,f1,site_macro_f1,type_macro_f1,jsonld_validity,hallucination_rate,unsupported_fields,predicted_fields,definition
+full_cached_replay,3452,0.917,0.846,0.880,0.886,0.615,1.000,0.000,0,17065,Replays cached DeepSeek planner/candidate outputs through the current verifier and composer.
+no_planner,3452,0.903,0.839,0.870,0.886,0.615,1.000,0.000,0,17178,Replaces the LLM extraction contract with the deterministic schema.org default contract before verification.
+no_property_wise_retrieval,3452,0.962,0.666,0.787,0.721,0.424,1.000,0.000,0,12791,Removes cached LLM slot candidates and keeps only structured-source and deterministic fallback candidate producers.
+no_repair,3452,0.923,0.851,0.885,0.892,0.623,1.000,0.000,0,17047,Accepts only candidates that pass verifier checks directly; rejected candidates are not repaired.
+no_fallback,3452,0.942,0.715,0.813,0.852,0.555,1.000,0.000,0,14030,Disables Step7 slot fill and conservative deterministic fallback fusion.
+no_target_slot_admission,3452,0.843,0.845,0.844,0.842,0.601,1.000,0.000,2,18538,Keeps verifier-accepted enrichment paths in the final JSON-LD rather than applying final target-slot admission.

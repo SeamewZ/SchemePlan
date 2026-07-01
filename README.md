@@ -1,4 +1,4 @@
-# SchemaPlan-RAG
+# SchemaPlan
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![Artifact](https://img.shields.io/badge/Artifact-Anonymous-555555)
@@ -6,9 +6,9 @@
 ![JSON-LD](https://img.shields.io/badge/Output-schema.org%20JSON--LD-0B7285)
 ![Dependencies](https://img.shields.io/badge/Core%20Dependencies-Stdlib%20Only-6A1B9A)
 
-Anonymous review artifact for **SchemaPlan-RAG**, a planned, evidence-verified framework for generating schema.org JSON-LD from web pages.
+Anonymous review artifact for **SchemaPlan**, a planned, evidence-verified framework for generating schema.org JSON-LD from web pages.
 
-SchemaPlan-RAG treats JSON-LD generation as a sequence of auditable field-local decisions rather than a single final-record prompt. The system constructs a DOM Evidence Graph, plans a page-specific schema contract, retrieves evidence for each property, generates evidence-cited slot candidates, verifies schema and evidence support, repairs rejected candidates under verifier feedback, and composes admitted fields into nested JSON-LD.
+SchemaPlan treats JSON-LD generation as a sequence of auditable field-local decisions rather than a single final-record prompt. The system constructs a DOM Evidence Graph, plans a page-specific schema contract, retrieves evidence for each property, generates evidence-cited slot candidates, verifies schema and evidence support, repairs rejected candidates under verifier feedback, and composes admitted fields into nested JSON-LD.
 
 This repository is prepared for double-blind review. It omits author identities, private paths, API keys, paper build files, historical caches, and exploratory methods that are not part of the reported system.
 
@@ -17,15 +17,15 @@ This repository is prepared for double-blind review. It omits author identities,
 - **Method:** planned, property-wise, evidence-verified schema.org JSON-LD generation.
 - **Benchmark:** WebSchema-JSONLD Bench-3452 over SWDE, public non-SWDE examples, and WDC-PAVE.
 - **Reproduction:** metric recomputation works without API keys or third-party packages.
-- **Fresh runs:** API-backed SchemaPlan-RAG and Direct DeepSeek scripts are included.
+- **Fresh runs:** API-backed SchemaPlan and Direct DeepSeek scripts are included.
 - **Claim control:** archived predictions and reference tables are separated from fresh-run outputs.
 
 ## Repository Map
 
 ```text
-src/schemarag_core.py                 Core SchemaPlan-RAG implementation and evaluator
+src/schemarag_core.py                 Core SchemaPlan implementation and evaluator
 scripts/recompute_metrics.py          Recompute main paper metrics from archived predictions
-scripts/run_schemaplan.py             Fresh SchemaPlan-RAG runs with optional API calls
+scripts/run_schemaplan.py             Fresh SchemaPlan runs with optional API calls
 scripts/run_direct_baseline.py        Fresh direct DeepSeek JSON-LD baseline
 tests/smoke_test.py                   Minimal offline import/run test
 data/processed/*.jsonl.gz             WebSchema-JSONLD Bench-3452 splits
@@ -88,11 +88,11 @@ Expected pooled results:
 | Regex baseline | 0.578 | 0.368 | 0.450 | 0.331 | 0/13613 |
 | Direct DeepSeek | 0.548 | 0.600 | 0.573 | 0.999 | 589/23587 |
 | Direct+Verifier | 0.644 | 0.468 | 0.542 | 1.000 | 0/15559 |
-| SchemaPlan-RAG | 0.950 | 0.924 | 0.937 | 1.000 | 16/20784 |
+| SchemaPlan | 0.950 | 0.924 | 0.937 | 1.000 | 16/20784 |
 
 The same command also writes the reference ablation and no-template diagnostic CSVs into the output directory.
 
-## Fresh SchemaPlan-RAG Runs
+## Fresh SchemaPlan Runs
 
 Set a DeepSeek-compatible key for API-backed runs:
 
@@ -166,7 +166,7 @@ python3 tests/smoke_test.py
 python3 scripts/recompute_metrics.py --out-dir runs/recomputed_metrics
 ```
 
-The second command should reproduce the pooled SchemaPlan-RAG row:
+The second command should reproduce the pooled SchemaPlan row:
 
 ```text
 precision=0.950, recall=0.924, f1=0.937, validity=1.000, unsupported_fields=16
